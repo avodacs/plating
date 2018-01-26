@@ -1,0 +1,6 @@
+{
+  "exclude": [
+    "tests/**/*.spec.js",
+    "coverage"
+  ]
+}
