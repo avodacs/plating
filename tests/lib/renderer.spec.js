@@ -107,27 +107,5 @@ describe('renderer', () => {
 
       expect(rendered).to.eql('Lorem {{p1}}');
     });
-
-    it('should accept an object for the token list', () => {
-      let message = 'Lorem {{p1}}, {{another}}';
-
-      let rendered = renderer.render(message, {
-        p1: 'ipsum',
-        another: 'dolor'
-      });
-
-      expect(rendered).to.eql('Lorem ipsum, dolor');
-    });
-
-    it('should accept an array for the token list', () => {
-      let message = 'Lorem {{p1}}';
-
-      let tokens = [];
-      tokens['p1'] = 'ipsum';
-
-      let rendered = renderer.render(message, tokens);
-
-      expect(rendered).to.eql('Lorem ipsum');
-    });
   });
 });
