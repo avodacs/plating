@@ -14,7 +14,7 @@ If no value for `placeholder` is defined, it will fall back to the `default valu
 
 ## Example
 
-```
+```js
 const plating = require('plating');
 
 let template = '{{app}} is a simple template system for {{lang|JS}}';
@@ -30,7 +30,7 @@ let rendered = plating.render(template, {
 
 In the example above, `tokens` contains:
 
-```
+```js
 [
   {
     raw: '{{app}}',
