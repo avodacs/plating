@@ -1,0 +1,3 @@
+# plating
+
+Simple JS Templating
