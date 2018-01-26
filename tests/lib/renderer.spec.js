@@ -107,5 +107,55 @@ describe('renderer', () => {
 
       expect(rendered).to.eql('Lorem {{p1}}');
     });
+
+    it('should trim whitespace for a value', () => {
+      let message = 'Lorem {{p1}}';
+
+      let rendered = renderer.render(message, {
+        p1: '  ipsum '
+      });
+
+      expect(rendered).to.eql('Lorem ipsum');
+    });
+
+    it('should use the default value if the token is just whitespace', () => {
+      let message = 'Lorem {{p1|ipsum}}';
+
+      let rendered = renderer.render(message, {
+        p1: ' '
+      });
+
+      expect(rendered).to.eql('Lorem ipsum');
+    });
+
+    it('should use the default value if the token is empty', () => {
+      let message = 'Lorem {{p1|ipsum}}';
+
+      let rendered = renderer.render(message, {
+        p1: ''
+      });
+
+      expect(rendered).to.eql('Lorem ipsum');
+    });
+
+    it('should use the default value if the token is null', () => {
+      let message = 'Lorem {{p1|ipsum}}';
+
+      let rendered = renderer.render(message, {
+        p1: null
+      });
+
+      expect(rendered).to.eql('Lorem ipsum');
+    });
+
+    it('should use the default value if the token is undefined', () => {
+      let message = 'Lorem {{p1|ipsum}}';
+
+      let rendered = renderer.render(message, {
+        p1: undefined
+      });
+
+      expect(rendered).to.eql('Lorem ipsum');
+    });
   });
 });
