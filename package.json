@@ -1,6 +1,6 @@
 {
   "name": "plating",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Simple JS Templating",
   "main": "index.js",
   "directories": {
@@ -29,7 +29,5 @@
     "mocha": "5.0.0",
     "nyc": "11.4.1"
   },
-  "dependencies": {
-    "array-unique": "0.3.2"
-  }
+  "dependencies": {}
 }
