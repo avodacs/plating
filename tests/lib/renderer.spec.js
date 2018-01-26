@@ -67,6 +67,16 @@ describe('renderer', () => {
 
       expect(tokens).to.eql(expected);
     });
+
+    it('should not fail if there are no tokens', () => {
+      let message = 'Lorem ipsum';
+
+      let tokens = renderer.extract(message);
+
+      let expected = [];
+
+      expect(tokens).to.eql(expected);
+    });
   });
 
   describe('render()', () => {
@@ -154,6 +164,14 @@ describe('renderer', () => {
       let rendered = renderer.render(message, {
         p1: undefined
       });
+
+      expect(rendered).to.eql('Lorem ipsum');
+    });
+
+    it('should not do any replacements if there are no tokens', () => {
+      let message = 'Lorem ipsum';
+
+      let rendered = renderer.render(message, {});
 
       expect(rendered).to.eql('Lorem ipsum');
     });
